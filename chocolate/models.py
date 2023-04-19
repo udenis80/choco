@@ -20,7 +20,7 @@ class Product(models.Model):
     """Виды шоколада"""
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     name = models.CharField('Продукт', max_length=160)
-    image = models.ImageField('Изображение', upload_to='media/')
+    img = models.ImageField(default='no_image.jpg', upload_to='product_image')
     url = models.SlugField(unique=True)
     description = models.TextField('Описание')
     price = models.IntegerField()
