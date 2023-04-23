@@ -18,16 +18,19 @@ class Category(models.Model):
 
 class Product(models.Model):
     """Виды шоколада"""
-    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     name = models.CharField('Продукт', max_length=160)
     img = models.ImageField(default='no_image.jpg', upload_to='product_image')
     url = models.SlugField(unique=True)
     description = models.TextField('Описание')
     price = models.IntegerField()
     available = models.BooleanField('В наличии', default=True)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
+    COLOR_CHOICES = (
+        ('milk', 'Молочный шоколад'),
+        ('dark', 'Темный шоколад'),
+        ('Kakao', 'Какао'),
+        ('forms', 'Формы для кондитеров'),
+        ('ingredients', 'Ингредиенты'))
+    color = models.CharField(max_length=25, choices=COLOR_CHOICES, default='молочный')
     class Meta:
         verbose_name = 'Продукт'
         verbose_name_plural = "Продукты"
