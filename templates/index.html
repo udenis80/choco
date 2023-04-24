@@ -189,25 +189,25 @@
             {% if post.available %}
                 {% if post.group == 'kakao' %}
                     <div class=" Portfolio-box printdesign">
-                        <a href="{% static 'img/Portfolio-pic1.jpg' %}"><img src="{{ post.img.url }}" alt=""></a>
+                        <a href="{{ post.url }}"><img src="{{ post.img.url }}" alt=""></a>
                         <h3>{{ post.name }}</h3>
                         <p>Цена {{ post.price }} руб.</p>
                     </div>
                 {% elif post.group == 'milk chocolate' %}
                     <div class="Portfolio-box webdesign">
-                        <a href="{% static 'img/Portfolio-pic2.jpg' %}"><img src="{{ post.img.url }}" alt=""></a>
+                        <a href="{{ post.url }}"><img src="{{ post.img.url }}" alt=""></a>
                         <h3>{{ post.name }}</h3>
                         <p>Цена {{ post.price }} руб.</p>
                     </div>
                 {% elif post.group == 'dark chocolate' %}
                     <div class=" Portfolio-box branding">
-                        <a href="{{ post.url.img.url }}"><img src="{{ post.img.url }}" alt=""></a>
+                        <a href="{{ post.url }}"><img src="{{ post.img.url }}" alt=""></a>
                          <h3>{{ post.name }}</h3>
                         <p>Цена {{ post.price }} руб.</p>
                     </div>
                 {% else %}
                     <div class=" Portfolio-box photography">
-                        <a href="{% static 'img/Portfolio-pic4.jpg' %}"><img src="{{ post.img.url }}" alt=""></a>
+                        <a href="{{ post.url }}"><img src="{{ post.img.url }}" alt=""></a>
                          <h3>{{ post.name }}</h3>
                         <p>Цена {{ post.price }} руб.</p>
                     </div>
