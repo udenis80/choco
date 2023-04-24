@@ -1,13 +1,10 @@
 from django.shortcuts import render
-from django.views import View
+from chocolate.models import Product
 
-from .models import Product
 
 def index(request):
-    return render(request, 'index.html')
-
-
-
-# def shop(request):
-#     products = Product.objects.all()
-#     return render(request, 'products/shop.html', {'pr': products})
+    product = Product.objects.all()
+    context = {
+        'pr': product
+    }
+    return render(request, 'index.html', context)

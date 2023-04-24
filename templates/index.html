@@ -180,43 +180,40 @@
                 <li><a href="#" data-filter=".branding">Темный шоколад</a></li>
                 <li><a href="#" data-filter=".webdesign">Молочный шоколад</a></li>
                 <li><a href="#" data-filter=".printdesign">Какао</a></li>
-                <li><a href="#" data-filter=".photography">Формы для кондитеров</a></li>
                 <li><a href="#" data-filter=".photography">Ингредиенты</a></li>
             </ul>
         </div>
-
     </div>
     <div class="portfolioContainer wow fadeInUp delay-04s">
-        <div class=" Portfolio-box printdesign">
-            <a href="{% static 'img/Portfolio-pic1.jpg' %}"><img src="{% static 'img/Portfolio-pic1.jpg' %}" alt=""></a>
-            <h3>Foto Album</h3>
-            <p>Print Design</p>
-        </div>
-        <div class="Portfolio-box webdesign">
-            <a href="{% static 'img/Portfolio-pic2.jpg' %}"><img src="{% static 'img/Portfolio-pic2.jpg' %}" alt=""></a>
-            <h3>Luca Theme</h3>
-            <p>Web Design</p>
-        </div>
-        <div class=" Portfolio-box branding">
-            <a href="{% static 'img/Portfolio-pic3.jpg' %}"><img src="{% static 'img/Portfolio-pic3.jpg' %}" alt=""></a>
-            <h3>Uni Sans</h3>
-            <p>Branding</p>
-        </div>
-        <div class=" Portfolio-box photography">
-            <a href="{% static 'img/Portfolio-pic4.jpg' %}"><img src="{% static 'img/Portfolio-pic4.jpg' %}" alt=""></a>
-            <h3>Vinyl Record</h3>
-            <p>Photography</p>
-        </div>
-        <div class=" Portfolio-box branding">
-            <a href="{% static 'img/Portfolio-pic5.jpg' %}"><img src="{% static 'img/Portfolio-pic5.jpg' %}" alt=""></a>
-            <h3>Hipster</h3>
-            <p>Branding</p>
-        </div>
-        <div class=" Portfolio-box photography">
-            <a href="{% static 'img/Portfolio-pic6.jpg' %}"><img src="{% static 'img/Portfolio-pic6.jpg' %}" alt=""></a>
-            <h3>Windmills</h3>
-            <p>Photography</p>
-        </div>
+        {% for post in pr %}
+            {% if post.available %}
+                {% if post.group == 'kakao' %}
+                    <div class=" Portfolio-box printdesign">
+                        <a href="{% static 'img/Portfolio-pic1.jpg' %}"><img src="{{ post.img.url }}" alt=""></a>
+                        <h3>{{ post.name }}</h3>
+                        <p>Цена {{ post.price }} руб.</p>
+                    </div>
+                {% elif post.group == 'milk chocolate' %}
+                    <div class="Portfolio-box webdesign">
+                        <a href="{% static 'img/Portfolio-pic2.jpg' %}"><img src="{{ post.img.url }}" alt=""></a>
+                        <h3>{{ post.name }}</h3>
+                        <p>Цена {{ post.price }} руб.</p>
+                    </div>
+                {% elif post.group == 'dark chocolate' %}
+                    <div class=" Portfolio-box branding">
+                        <a href="{{ post.url.img.url }}"><img src="{{ post.img.url }}" alt=""></a>
+                         <h3>{{ post.name }}</h3>
+                        <p>Цена {{ post.price }} руб.</p>
+                    </div>
+                {% else %}
+                    <div class=" Portfolio-box photography">
+                        <a href="{% static 'img/Portfolio-pic4.jpg' %}"><img src="{{ post.img.url }}" alt=""></a>
+                         <h3>{{ post.name }}</h3>
+                        <p>Цена {{ post.price }} руб.</p>
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
     </div>
 </section>
 <!--main-section-end-->
