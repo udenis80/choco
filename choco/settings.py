@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_forms',
+    # 'users.apps.UsersConfig'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'chocolate',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -121,8 +124,9 @@ STATIC_URL = '/static/'
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [STATIC_DIR]
 MEDIA_URL = '/madia/'
+CRISPY_TEMPLATE_PACK='bootstrap4'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+LOGIN_REDIRECT_URL = 'home'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 TEMPLATE_DIRS = [

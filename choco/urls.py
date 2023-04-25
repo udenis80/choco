@@ -20,10 +20,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from users import views as userViews
+from django.contrib.auth import views as authViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("chocolate.urls")),
+    path('registration/', userViews.register, name="reg"),
 ]
 
 if settings.DEBUG:

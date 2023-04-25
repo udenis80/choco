@@ -1,8 +1,14 @@
-{#{% extends 'index.html' %}#}
-{#{% block title %}{{ product.name }}{% endblock title %}#}
-{#{% block product %}#}
-<h1>{{ product.name }}</h1>
-<img src="{{ product.image.url }}" alt="{{ product.name }} image">
-<p>{{ product.description }}</p>
-<p>Цена: {{ product.price }}</p>
-{#{% endblock product %}#}
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="product_detail">
+  <div class="img">
+    <img src="{{ product.img.url }}" alt="{{ product.name }}"/>
+  </div>
+  <div class="product info">
+    <h2>{{ product.name }}</h2>
+    <p class="price">{{ product.price }} руб.</p>
+    <p class="description">{{ product.description }}</p>
+  </div>
+</div>
+{% endblock content %}
