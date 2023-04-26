@@ -12,5 +12,10 @@ def shop(request):
     }
     return render(request, 'shop.html', context)
 
-def product_detail(request):
-    return render(request, 'product_detail.html')
+# def product_detail(request):
+#     return render(request, 'product_detail.html')
+
+class ProductDetailView(DetailView):
+    model = Product
+    slug_field = 'url'
+

@@ -58,7 +58,7 @@ ROOT_URLCONF = 'choco.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [BASE_DIR / '']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -130,8 +130,8 @@ CRISPY_TEMPLATE_PACK='bootstrap4'
 LOGIN_REDIRECT_URL = 'home'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-TEMPLATE_DIRS = [
-    os.path.join(BASE_DIR, 'templates/products'),
-
-]
+# TEMPLATE_DIRS = [
+#     os.path.join(BASE_DIR, 'chocolate/templates/products'),
+#
+# ]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
