@@ -11,3 +11,6 @@ def shop(request):
         'pr': product
     }
     return render(request, 'shop.html', context)
+
+def product_detail(request):
+    return render(request, 'product_detail.html')

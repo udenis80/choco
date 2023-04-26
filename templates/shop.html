@@ -47,7 +47,7 @@
                         </div>
                     {% elif post.group == 'milk chocolate' %}
                         <div class="Portfolio-box webdesign">
-                            <a href="{{ post.url }}"><img src="{{ post.img.url }}" alt=""></a>
+                            <a href="{{ post.objects.get.POST }}"><img src="{{ post.img.url }}" alt=""></a>
                             <h3>{{ post.name }}</h3>
                             <p>Цена {{ post.price }} руб.</p>
                         </div>

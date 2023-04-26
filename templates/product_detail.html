@@ -1,14 +1,26 @@
-{% extends 'index.html' %}
-
-{% block content %}
-<div class="product_detail">
-  <div class="img">
-    <img src="{{ product.img.url }}" alt="{{ product.name }}"/>
-  </div>
-  <div class="product info">
-    <h2>{{ product.name }}</h2>
-    <p class="price">{{ product.price }} руб.</p>
-    <p class="description">{{ product.description }}</p>
-  </div>
-</div>
-{% endblock content %}
+{% extends 'main.html' %}
+{% block title_page %}
+  <title>Главная страница</title>
+{% endblock title_page %}
+{% block product %}
+    <div class="left-ads-display col-lg-8">
+        <div class="row">
+            <div class="desc1-left col-md-6">
+                <img src="{{ product.img.url }}" class="img-fluid" alt="">
+            </div>
+            <div class="desc1-right col-md-6 pl-lg-4">
+                <h3 class="editContent">
+                    {{ product.name }}
+                </h3>
+                <h5 class="editContent"></h5>
+                <ul>
+                    <li style="list-style: none">
+                        <span><b>Описание:</b> {{ product.description }}</span></li>
+                    <li style="list-style: none">
+                        <span><b>Цена:</b> {{ product.price }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock product %}
