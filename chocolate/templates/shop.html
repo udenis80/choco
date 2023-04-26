@@ -41,26 +41,27 @@
                 {% if post.available %}
                     {% if post.group == 'kakao' %}
                         <div class=" Portfolio-box printdesign">
-                            <a href="{{ post.url }}"></a><img src="{{ post.img.url }}" alt="">
+                            <a href="{{ post.url }}"><img src="{{ post.img.url }}" alt=""></a>
                             <h3>{{ post.name }}</h3>
                             <p>Цена {{ post.price }} руб.</p>
                         </div>
                     {% elif post.group == 'milk chocolate' %}
                         <div class="Portfolio-box webdesign">
-                            <a href="{{ post.url }}"></a><img src="{{ post.img.url }}" alt="">
+                            <a href="{{ post.url }}"><img src="{{ post.img.url }}" alt=""></a>
                             <h3>{{ post.name }}</h3>
                             <p>Цена {{ post.price }} руб.</p>
                         </div>
                     {% elif post.group == 'dark chocolate' %}
                         <div class=" Portfolio-box branding">
-                            <a href="{{ post.url }}"></a><img src="{{ post.img.url }}" alt="">
+                            <a href="{{ post.url }}"><img src="{{ post.img.url }}" alt=""></a>
                             <h3>{{ post.name }}</h3>
                             <p>Цена {{ post.price }} руб.</p>
                         </div>
                     {% else %}
                         <div class=" Portfolio-box photography">
-                            <a href="{{ post.url }}"></a><img src="{{ post.img.url }}" alt="">
+                            <a href={{ post.url }}><img src="{{ post.img.url }}" alt=""></a>
                             <h3>{{ post.name }}</h3>
+                            <a href={{ post.url }}> тут </a>
                             <p>Цена {{ post.price }} руб.</p>
                         </div>
                     {% endif %}
