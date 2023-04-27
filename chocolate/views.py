@@ -12,7 +12,6 @@ def shop(request):
     }
     return render(request, 'shop.html', context)
 
-
 class ProductDetailView(DetailView):
     """полное описание продукта"""
     model = Product
