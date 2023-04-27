@@ -58,7 +58,7 @@ ROOT_URLCONF = 'choco.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / '']
+        'DIRS': []
         ,
         'APP_DIRS': True,
         'OPTIONS': {
