@@ -59,9 +59,8 @@
                         </div>
                     {% else %}
                         <div class=" Portfolio-box photography">
-                            <a href={{ post.url }}><img src="{{ post.img.url }}" alt=""></a>
-                            <h3>{{ post.name }}</h3>
-                            <a href={{ post.url }}> тут </a>
+                            <img src="{{ post.img.url }}" alt="">
+                           <a href="{{ post.get_absolute_url}}"> <h3>{{ post.name }}</h3></a>
                             <p>Цена {{ post.price }} руб.</p>
                         </div>
                     {% endif %}

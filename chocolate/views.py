@@ -12,12 +12,9 @@ def shop(request):
     }
     return render(request, 'shop.html', context)
 
-# def product_detail(request):
-#     return render(request, 'product_detail.html')
+
 
 class ProductDetailView(DetailView):
     """полное описание продукта"""
-    def get(self, request, pk):
-        model = Product
-        product = Product.objects.all(id=pk)
-        return render(request, 'chocolate/product_detail.html', {'products': product})
+    model = Product
+    slug_field = 'url'
