@@ -280,13 +280,13 @@ color: #fff;
 }
 .featured-box-col2{ overflow:hidden;}
 .featured-box.magic{
-	background:url('../img/magic.png') left top no-repeat;
+	background:url('../img/section-bg2.jpg') left top no-repeat;
 }
 .featured-box.packaged{
-	background:url('../img/packaged.png') left top no-repeat;
+	background:url('../img/section-bg2.jpg') left top no-repeat;
 }
 .featured-box.seo{
-	background:url('../img/seo.png') left top no-repeat;
+	background:url('../img/section-bg2.jpg') left top no-repeat;
 }
 .Learn-More{
 	display:inline-block;
